@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>IT WORKS {{ custom }}</h1>
+<h2>Part 1</h2>
+{% for item in data1.data %}
+    <p>{{ item.attributes.description }}</p>
+{% endfor %}
+<h2>Part 2</h2>
+{% for item in data2.data %}
+    <p>{{ item.attributes.description }}</p>
+{% endfor %}
+<h2>Part 3</h2>
+{% for item in data3.data %}
+    <p>{{ item.attributes.description }}</p>
+{% endfor %}
+</body>
+<h2>Part 4</h2>
+{% for item in data4.data %}
+    <p>{{ item.attributes.description }}</p>
+{% endfor %}
+</body>
+</html>

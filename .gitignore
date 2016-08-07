@@ -1,0 +1,13 @@
+/src/realty/static/dist
+*.pyc
+app.db
+.idea
+.vagrant
+
+
+*.DS_Store
+*npm-debug.log
+*.sublime-project
+
+*.zip
+build/

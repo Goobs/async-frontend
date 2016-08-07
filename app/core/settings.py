@@ -1,0 +1,8 @@
+DEBUG = False
+DEBUG_TOOLBAR = False
+
+ROOT_DIR = ''
+TEMPLATES_DIR = ''
+
+
+INSTALLED_APPS = []
