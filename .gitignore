@@ -8,6 +8,7 @@ app.db
 *.DS_Store
 *npm-debug.log
 *.sublime-project
-
+manifest.json
 *.zip
 build/
+app/static/dist

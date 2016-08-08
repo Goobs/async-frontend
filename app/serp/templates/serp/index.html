@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <title>Title</title>
+    <link rel="stylesheet" href="{{ asset_url_for('app.css') }}">
 </head>
 <body>
-<h1>IT WORKS {{ custom }}</h1>
+<h1>IT WORKS</h1>
 <h2>Part 1</h2>
 {% for item in data1.data %}
     <p>{{ item.attributes.description }}</p>

@@ -5,6 +5,7 @@ import aiohttp_debugtoolbar
 import app.core.settings as _settings
 from app.core import urlconf
 from app.core import templating
+from app.core import assets
 
 
 def get_settings():
@@ -41,8 +42,10 @@ def init_app():
     discover_urls(app)
     urlconf.setup(app)
     templating.setup(app)
+    assets.setup(app)
 
     if app.settings.DEBUG:
         if _settings.DEBUG_TOOLBAR:
             aiohttp_debugtoolbar.setup(app)
+        app.router.add_static(_settings.STATIC_URL, _settings.STATIC_PATH)
     return app
