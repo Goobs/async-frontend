@@ -1,4 +1,4 @@
-from app.core.urlconf import url
+from djaio.core.urlconf import url
 from .views import TestView, SomeView
 
 

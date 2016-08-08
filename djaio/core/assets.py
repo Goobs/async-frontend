@@ -4,6 +4,7 @@ from aiohttp_jinja2 import get_env
 
 
 class Webpack(object):
+
     def __init__(self, app):
         self.app = app
         env = get_env(app)
@@ -31,7 +32,7 @@ class Webpack(object):
         Read in the manifest json file which acts as a manifest for assets.
         This allows us to get the asset path as well as hashed names.
 
-        :param app: Flask application
+        :param app: aiohttp application
         :return: None
         """
         webpack_stats = app.settings.WEBPACK_MANIFEST_PATH

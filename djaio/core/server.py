@@ -2,10 +2,10 @@ import os
 import importlib
 from aiohttp import web
 import aiohttp_debugtoolbar
-import app.core.settings as _settings
-from app.core import urlconf
-from app.core import templating
-from app.core import assets
+import djaio.core.settings as _settings
+from djaio.core import urlconf
+from djaio.core import templating
+from djaio.core import assets
 
 
 def get_settings():
