@@ -2,6 +2,7 @@ import asyncio
 import aiohttp
 from aiohttp import web
 import aiohttp_jinja2
+from djaio.core.utils import gather_map
 
 
 class BaseContextmixin(object):
@@ -28,14 +29,7 @@ class RemoteContextMixin(BaseContextmixin):
 
     async def get_context_data(self, *args, **kwargs):
         context = await super(RemoteContextMixin, self).get_context_data(*args, **kwargs)
-        _keys = []
-        _coros = []
-
-        for key, url in self.get_data_url_map():
-            _keys.append(key)
-            _coros.append(self.get_remote_data(url))
-        _results = await asyncio.gather(*_coros)
-        context.update(dict(zip(_keys, _results)))
+        context.update(dict(await gather_map(self.get_data_url_map(), self.get_remote_data)))
         return context
 
 

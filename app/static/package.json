@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "NODE_ENV=development webpack -w",
-    "build": "rm -rf dist/* && NODE_ENV=production webpack -p --colors"
+    "build": "rm -rf dist/* && NODE_ENV=production webpack -p --colors --display-error-details"
   },
   "author": "Goobs",
   "license": "ISC",
@@ -33,6 +33,7 @@
     "backbone": "^1.2.0",
     "jquery": "^2.1.4",
     "parsleyjs": "^2.1.2",
+    "spf": "^2.4.0",
     "underscore": "^1.8.3"
   }
 }

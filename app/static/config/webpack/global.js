@@ -16,19 +16,20 @@ var jsonPresent = require('./helpers/json-presenter');
 module.exports = function(_path) {
   // define local variables
 
-  var dependencies = Object.keys(require(_path + '/package').dependencies);
+  var dependencies = Object.keys(require(_path + '/package.json').dependencies);
   var rootAssetPath = _path + 'assets';
   var manifestPath = path.join(_path, 'manifest.json');
   var childProcess = require('child_process');
   var _version = childProcess.execSync('git describe').toString();
 
   _version = _version.replace(/[\s\r\n]+$/, '');
-
+  // dependencies.splice([dependencies.indexOf('spf')], 1);
+  // console.log(dependencies)
+  // dependencies.push('./node_modules/spf/dist/spf.js');
   return {
     entry: {
       vendors: dependencies,
-      app: _path + '/assets/js/app.js',
-
+      app: _path + '/assets/js/app.js'
     },
 
     // output system
@@ -75,6 +76,7 @@ module.exports = function(_path) {
         Backbone: 'backbone',
         'window.jQuery': 'jquery',
         _: 'underscore'
+        // spf: 'spf'
       }),
       new TextPlugin('css/[name].[hash].css'),
       new Manifest(manifestPath, {
